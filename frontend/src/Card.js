@@ -1,6 +1,7 @@
 import React from 'react';
 
  const Card = ({ info }) => {
+  let bg = info.favorite === 0 ? 'none' : 'red';
   return (
     <div>
       <div className="card">
@@ -16,7 +17,7 @@ import React from 'react';
             <div className="recom">
               { info.recommendation > 0 && <span>{info.recommendation}명 추천</span> }
             </div>
-            <div className="favorite" style={{ background : 'red' }}></div>
+            <div className="favorite" style={{ background : bg }}></div>
           </div>
         </div>
       </div>
