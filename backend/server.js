@@ -119,3 +119,14 @@ const company ={
 app.get('/company',function(req,res){
   res.json(company);
 });
+
+// 하나의 회사 정보
+app.get('/company/:id', function(req,res){
+  let data = company.companys;
+  let company_id = req.params.id;
+
+  let result = data.filter(function(value,index){
+    return value.id === Number(company_id);
+  });
+  res.json({ details : result });
+});

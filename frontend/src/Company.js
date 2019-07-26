@@ -9,29 +9,36 @@ class Company extends Component {
    companys : [],
  }
 
-  getList = () => {
-   axios.get('http://localhost:4000/company')
-     .then((response) => {
-       console.log(response.data);
-       this.setState({
-         count : response.data.count,
-         companys : response.data.companys
-       });
-     }).catch((error) => {
-       console.log(error);
-     });
+  componentDidMount() {
+    axios.get('http://localhost:4000/company')
+    .then((response) => {
+      console.log(response.data);
+      this.setState({
+        count : response.data.count,
+        companys : response.data.companys
+      });
+    }).catch((error) => {
+      console.log(error);
+    });
+  }
+
+  companyDetails = (id) => {
+    this.props.history.push(`/company/${id}`);
   }
 
   render(){
     const { count, companys } = this.state;
     return(
       <div>
-        <button onClick={this.getList}>데이터 가져오기</button>
         <div>{count}</div>
         <hr style={{ margin : '10px 0' }} />
         <div className="container">
           { companys.map((value)=>{
-            return <Card key={value.id} info={value} />
+            return (
+              <div key={value.id} onClick={()=>{this.companyDetails(value.id)}}>
+                <Card info={value} />
+              </div>
+            )
           })}
         </div>
       </div>
