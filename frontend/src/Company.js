@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import axios from 'axios';
-import './company.css';
+import './css/company.css';
 import Card from './Card';
 
 class Company extends Component {
