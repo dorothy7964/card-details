@@ -3,7 +3,7 @@ import axios from 'axios';
 import './company.css';
 import Card from './Card';
 
-class App extends Component {
+class Company extends Component {
   state = {
    count : 0,
    company : [],
@@ -39,4 +39,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Company;
