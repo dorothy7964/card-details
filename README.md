@@ -1,12 +1,12 @@
-# NPM 설치
+# yarn 설치
 
 ```javascript
 //backend
-npm install supervisor -g
-npm install --save express cors body-parser
+yarn global add supervisor
+yarn add express cors body-parser
 
 //frontend
-npm install --save axios
+yarn add axios
 ```
 
 ### backend
