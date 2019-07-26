@@ -10,7 +10,7 @@ class Details extends Component {
   componentDidMount(){
     const { id } = this.props.match.params;
     // render 끝난 후 실행 됨
-    axios.get('http://localhost:4000/company/' + id)
+    axios.get(`http://localhost:4000/company/${id}`)
       .then(response=>{
         this.setState({
           details : response.data.details
