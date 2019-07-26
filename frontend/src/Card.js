@@ -14,7 +14,7 @@ import React from 'react';
           </div>
           <div className="opt">
             <div className="recom">
-              <span>O명 추천</span>
+              { info.recommendation > 0 && <span>{info.recommendation}명 추천</span> }
             </div>
             <div className="favorite" style={{ background : 'red' }}></div>
           </div>
