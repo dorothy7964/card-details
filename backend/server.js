@@ -7,7 +7,7 @@ app.listen(4000);
 
 const company ={
   count: 13,
-  company:
+  companys:
     [{
       id: 1,
       name: "GS SHOP",

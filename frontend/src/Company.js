@@ -6,7 +6,7 @@ import Card from './Card';
 class Company extends Component {
   state = {
    count : 0,
-   company : [],
+   companys : [],
  }
 
   getList = () => {
@@ -15,7 +15,7 @@ class Company extends Component {
        console.log(response.data);
        this.setState({
          count : response.data.count,
-         company : response.data.company,
+         companys : response.data.companys
        });
      }).catch((error) => {
        console.log(error);
@@ -23,14 +23,14 @@ class Company extends Component {
   }
 
   render(){
-    const { count, company } = this.state;
+    const { count, companys } = this.state;
     return(
       <div>
         <button onClick={this.getList}>데이터 가져오기</button>
         <div>{count}</div>
         <hr style={{ margin : '10px 0' }} />
         <div className="container">
-          { company.map((value)=>{
+          { companys.map((value)=>{
             return <Card key={value.id} info={value} />
           })}
         </div>
